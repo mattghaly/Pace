@@ -1,0 +1,76 @@
+:root{
+  --bg:#0d0912;
+  --surface:#171020;
+  --line:#2b2139;
+  --text:#ece7f4;
+  --muted:#a89fb9;
+  --violet:#a98bf0;
+  --violet-deep:#7b5cd6;
+  --on-violet:#140c24;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+.top{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:1.25rem 1.5rem}
+.brand{font:600 1.6rem var(--serif);text-decoration:none;letter-spacing:.01em}
+.top nav{display:flex;gap:1.5rem}
+.top nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+.top nav a:hover{color:var(--text)}
+
+main{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1.5rem}
+h3{font-size:1.2rem;margin-bottom:.5rem}
+p{margin:0 0 1rem}
+
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;padding:3rem 0 4.5rem}
+.hero-text p{color:var(--muted);max-width:34rem;margin-top:1.5rem;font-size:1.15rem}
+
+.diary{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.5rem;box-shadow:0 0 0 1px rgba(169,139,240,.06),0 30px 60px -30px rgba(123,92,214,.35)}
+.diary-label{display:block;font:600 1.05rem var(--serif);margin-bottom:.6rem}
+textarea{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;font:inherit;resize:vertical;min-height:7rem}
+textarea::placeholder{color:#6f6582}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.9rem 0 1.1rem}
+.chip{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.35rem .85rem;font:inherit;font-size:.9rem;cursor:pointer;transition:border-color .15s,color .15s}
+.chip:hover{border-color:var(--violet);color:var(--text)}
+.btn{background:var(--violet);color:var(--on-violet);border:0;border-radius:12px;padding:.8rem 1.4rem;font:600 1rem var(--sans);cursor:pointer;transition:background .15s}
+.btn:hover{background:#bba3f5}
+
+.result{margin-top:1.4rem;border-top:1px solid var(--line);padding-top:1.2rem;animation:rise .45s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.block{margin-bottom:1rem}
+.block h3{font-size:.95rem;color:var(--violet)}
+.block p{margin:0}
+.step{background:rgba(169,139,240,.09);border-left:3px solid var(--violet);border-radius:0 10px 10px 0;padding:.8rem 1rem}
+.fine{color:#7d7390;font-size:.85rem;margin:1rem 0 0}
+
+.band{border-top:1px solid var(--line);padding:4rem 0}
+.lead{color:var(--muted);max-width:40rem;font-size:1.15rem}
+.loop{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.loop p{color:var(--muted);margin:0}
+.promises{margin:0;padding-left:1.2rem;color:var(--muted);max-width:40rem}
+.promises li{margin-bottom:.6rem}
+.promises li::marker{color:var(--violet)}
+
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;max-width:44rem}
+.plan{border:1px solid var(--line);border-radius:16px;padding:1.5rem;background:var(--surface)}
+.plan.featured{border-color:var(--violet-deep)}
+.price{font:600 1.7rem var(--serif);margin:.2rem 0 1rem}
+.plan ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+
+footer{max-width:1100px;margin:0 auto;padding:2.5rem 1.5rem 3rem;border-top:1px solid var(--line);color:#8a8099;font-size:.9rem}
+footer p{max-width:44rem}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;gap:2rem;padding-top:1.5rem}
+  .loop{grid-template-columns:1fr;gap:1.5rem}
+  .plans{grid-template-columns:1fr}
+  .top nav{gap:1rem}
+}
