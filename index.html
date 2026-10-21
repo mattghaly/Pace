@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pace – a diary that remembers and helps you grow</title>
+<meta name="description" content="Pace is a private diary for people in their 20s who feel lost. Write every day, look back, and get reflections that use your whole history.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#">Pace</a>
+  <nav aria-label="Main"><a href="#journal">Your journal</a><a href="#how">How it works</a><a href="#privacy">Privacy</a><a href="#plans">Plans</a></nav>
+</header>
+<main>
+<section class="hero">
+  <h1>A diary that remembers, so you can see how far you've come.</h1>
+  <p>Write about your day, as much as you like. Pace keeps every entry, notices what keeps coming back, and uses your whole history to guide you. Grow at your own pace.</p>
+</section>
+
+<section id="journal" class="journal">
+  <div class="card write">
+    <label for="entry" class="lbl">Today's entry</label>
+    <textarea id="entry" rows="9" placeholder="Write about your day: what happened, how it felt, what's on your mind."></textarea>
+    <fieldset class="mood"><legend>How was today?</legend>
+      <label><input type="radio" name="mood" value="1"><span>1 Low</span></label>
+      <label><input type="radio" name="mood" value="2"><span>2</span></label>
+      <label><input type="radio" name="mood" value="3" checked><span>3 Okay</span></label>
+      <label><input type="radio" name="mood" value="4"><span>4</span></label>
+      <label><input type="radio" name="mood" value="5"><span>5 Great</span></label>
+    </fieldset>
+    <div class="actions">
+      <button type="button" id="save" class="btn">Save entry and reflect</button>
+      <button type="button" id="sample" class="btn ghost">Load a sample week</button>
+    </div>
+    <p id="hint" class="fine" aria-live="polite"></p>
+
+    <div id="result" class="result" hidden aria-live="polite">
+      <p id="r-head" class="when"></p>
+      <div class="block"><h3>What you wrote</h3><p id="r-text" class="own"></p></div>
+      <div class="block"><h3>What I noticed</h3><p id="r-notice"></p></div>
+      <div class="block" id="b-past"><h3>Compared with your past entries</h3><p id="r-past"></p></div>
+      <div class="block"><h3>What might matter to you</h3><p id="r-matters"></p></div>
+      <div class="block step"><h3>One small step</h3><p id="r-step"></p></div>
+    </div>
+  </div>
+
+  <aside class="card history">
+    <h2>Your journal</h2>
+    <div id="picture" class="picture"></div>
+    <ul id="timeline" class="timeline"></ul>
+    <div class="tools">
+      <button type="button" id="export" class="link">Export entries</button>
+      <button type="button" id="wipe" class="link">Delete all</button>
+    </div>
+    <p class="fine">Demo: entries are saved only in this browser, and reflections are simulated. Accounts and real AI come in the full version.</p>
+  </aside>
+</section>
+
+<section id="how" class="band">
+  <h2>One loop, repeated at your own speed</h2>
+  <div class="loop">
+    <div><h3>Notice</h3><p>Pace spots what keeps coming back across your entries: the moods, situations, and moments that give or take your energy.</p></div>
+    <div><h3>Understand</h3><p>It connects those patterns to what matters to you, so your values and strengths come from your own words.</p></div>
+    <div><h3>Try</h3><p>You get one small experiment at a time. Write about how it went, and the loop continues with what you learned.</p></div>
+  </div>
+</section>
+
+<section id="privacy" class="band">
+  <h2>Your diary stays yours</h2>
+  <ul class="promises">
+    <li>No ad tracking, and your entries are never sold or shared with advertisers.</li>
+    <li>Export or permanently delete everything, any time.</li>
+    <li>Lock your diary with a passcode or biometrics.</li>
+    <li>We tell you plainly how the AI handles your entries.</li>
+  </ul>
+</section>
+
+<section id="plans" class="band">
+  <h2>Start free, go deeper if it helps</h2>
+  <div class="plans">
+    <div class="plan"><h3>Free</h3><p class="price">$0</p><ul><li>Daily diary and full history</li><li>Reflections and small steps</li><li>Export and delete tools</li></ul></div>
+    <div class="plan featured"><h3>Pace Plus</h3><p class="price">$6 / month</p><ul><li>Long-term pattern insights</li><li>Guided multi-week paths</li><li>Adjustable tone for reflections</li><li>14-day trial, no card needed</li></ul></div>
+  </div>
+</section>
+</main>
+<footer>
+  <p>Pace supports self-reflection. It isn't therapy or a crisis service. If you are in danger or thinking about harming yourself, contact your local emergency number or someone you trust right now.</p>
+  <p>First draft. Plans and prices are placeholders.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
